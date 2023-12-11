@@ -1,6 +1,5 @@
 
 import dotenv from "dotenv"
-console.log("app");
 import  connectDB  from "./db/index.js"
 
 /*
@@ -31,3 +30,11 @@ dotenv.config({
     path: './env'
 })
 connectDB()
+.then(()=>{
+    app.listen(8000,()=>{
+        console.log("server is running 8000");
+    })
+})
+.catch((error)=>{
+    console.log("Mongodb Connection fail  !!" ,  error);
+})
